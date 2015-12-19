@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+ 	<!-- To ensure proper rendering and touch zooming for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap core CSS -->
+  <link href="http://wwwlab.cs.univie.ac.at/~a1363761/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap theme -->
+  <link href="http://wwwlab.cs.univie.ac.at/~a1363761/css/bootstrap-theme.min.css" rel="stylesheet">
+
+	<!-- um AngularJS zu benutzen -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="myApp.js"></script>
+	<script src="myCtrl.js"></script>
+
+	<style>/* geht nur wenn required attribut vorhanden und kein placeholder */
+		input.ng-invalid { 
+    	background-color: lightblue;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container theme-showcase" role="main">
+
+	<div class="jumbotron" ng-app="myApp" ng-controller="myCtrl">
+		Startdatum: <input type="text" ng-model="startDate"/><br>
+		Enddatum: <input type="text" ng-model="endDate"/><br>
+		Name: <input type="text" ng-model="nameAktie"/><br>
+		<button ng-click="toggle()">Anzeigen</button>
+		
+		<h3>Aktienkurse</h3>
+		Suche in Liste: <input typetype="text" ng-model="suche"/>
+		
+ 		<table class="table">
+	 		<th>Index</th><th>Date</th><th>Low</th><th>High</th><th>Close</th><th>Adj.Close</th><th>Volume</th>
+ 	 		<tr data-ng-repeat="x in names | filter:suche | orderBy:'Date'" >
+				<td>{{$index+1}}</td>
+				<td>{{x.Date}}</td>
+				<td>{{x.Low | currency}}</td>
+				<td>{{x.High | currency}}</td>
+				<td>{{x.Close | currency}}</td>
+				<td>{{x.Adj_Close | currency}}</td>
+				<td>{{x.Volume}}</td>
+	    </tr>
+ 		</table>
+ 		Durchschnitt Adj_Value={{durchschnAdjVal() | currency}}
+ 		
+	</div>
+
+</div>
+</body>
+</html>
