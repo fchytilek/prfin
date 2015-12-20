@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<datenreihe>
+    <p>
+        <age>25</age>
+        <language>de</language>
+    </p>
+    <adj_Close>hallo</adj_Close>
+    <close>close</close>
+</datenreihe>
