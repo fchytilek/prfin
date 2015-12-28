@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8"> 
+ 	<!-- To ensure proper rendering and touch zooming for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap core CSS -->
+  <link href="http://wwwlab.cs.univie.ac.at/~a1363761/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap theme -->
+  <link href="http://wwwlab.cs.univie.ac.at/~a1363761/css/bootstrap-theme.min.css" rel="stylesheet">
+
+	<!-- um AngularJS zu benutzen -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+	
+	<script src="myApp.js"></script>
+	<script src="myCtrl.js"></script>
+
+	<style>[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {display: none !important;}</style>
+</head>
+
+
+<body>
+
+	<div class="container theme-showcase" role="main">
+
+		<div class="jumbotron">
+			<div ng-cloak>
+				<div class="row">
+            <div class="col-md-12">
+
+                <div class="page-header">
+                   <h1>Finanzwirtschaft Projekt(Zeitreihen-Analyse)</h1>
+                </div>
+                <div class="route-container">
+									
+                  <div ng-view></div>
+									
+                </div>
+
+            </div>
+        </div>
+			</div>
+			<div class="row demofooter">
+					<div class="col-md-12">
+							<a href="#/">Zurück zum Hauptmenü</a><br/>
+							<a href="#/aktienkurseAbrufen">Aktienkurse abrufen</a>
+					</div>
+			</div>
+		</div>
+
+	</div>
+	
+</body>
+</html>

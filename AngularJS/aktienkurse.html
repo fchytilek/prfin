@@ -1,0 +1,37 @@
+
+<div class="container theme-showcase" role="main">
+
+	<div class="jumbotron"  ng-controller="myCtrl" ng-cloak>
+		 
+		Startdatum: <input type="text" ng-model="startDate"/><br>
+		Enddatum: <input type="text" ng-model="endDate"/><br>
+		Name: <input type="text" ng-model="nameAktie"/><br>
+		<button ng-click="toggle()">Anzeigen</button>
+		
+		<h3>Aktienkurse</h3>
+		Suche in Liste: <input typetype="text" ng-model="suche"/>
+		
+ 		<table class="table">
+ 			<tr>
+		 		<th>Index</th>
+		 		<th><a href="" ng-click="sort.predicate='Date'; sort.reverse=!sort.reverse">Date</a></th>
+		 		<th><a href="" ng-click="sort.predicate='Low'; sort.reverse=!sort.reverse">Low</a></th>
+		 		<th><a href="" ng-click="sort.predicate='High'; sort.reverse=!sort.reverse">High</a></th>
+		 		<th><a href="" ng-click="sort.predicate='Close'; sort.reverse=!sort.reverse">Close</a></th>
+		 		<th><a href="" ng-click="sort.predicate='Adj_Close'; sort.reverse=!sort.reverse">Adj.Close</a></th>
+		 		<th><a href="" ng-click="sort.predicate='Volume'; sort.reverse=!sort.reverse">Volume</a></th>
+			</tr>
+ 	 		<tr data-ng-repeat="x in names | filter:suche | orderBy:sort.predicate:sort.reverse" >
+				<td>{{$index+1}}</td>
+				<td>{{x.Date}}</td>
+				<td>{{x.Low | currency}}</td>
+				<td>{{x.High | currency}}</td>
+				<td>{{x.Close | currency}}</td>
+				<td>{{x.Adj_Close | currency}}</td>
+				<td>{{x.Volume}}</td>
+	    </tr>
+ 		</table>
+ 		Durchschnitt Adj_Value={{durchschnAdjVal() | currency}}
+ 		
+	</div>
+</div>

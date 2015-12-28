@@ -1,10 +1,11 @@
-app.controller('myCtrl', function($scope,$http) {
+myApp.controller('myCtrl', function($scope,$http,$location,$routeParams) {
 	//TestVariablen
 		$scope.vorName = "Gerhard";
     $scope.nachName= "Schmidt";
     $scope.startDate = "2014-12-01";
     $scope.endDate= "2015-01-01";
     $scope.nameAktie="msft";
+		$scope.names=null;
     
 			
 	//Einfach 2 Strings zusammen retourgeben
